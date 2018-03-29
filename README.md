@@ -38,7 +38,21 @@ docker run \
 
 docker-compose
 --------------
+```
+version: '3'
+services:
 
+    smarthome-ng:
+      image: ralfbs/smarthomeng:latest
+      volumes:
+       - ./config/smarthomeng/etc:/usr/local/smarthome/etc
+      privileged: true
+      ports:
+        - 2323:2323
+        - 2424:2424
+        - 8383:8383
+      restart: always
+ ```
 
 
 
